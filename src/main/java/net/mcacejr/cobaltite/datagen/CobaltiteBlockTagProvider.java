@@ -27,6 +27,18 @@ public class CobaltiteBlockTagProvider extends FabricTagProvider.BlockTagProvide
                 .add(CobaltiteBlocks.COBALT_ORE)
                 .add(CobaltiteBlocks.OPAL_ORE);
 
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(CobaltiteBlocks.COBALT_ORE)
+                .add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE)
+                .add(CobaltiteBlocks.OPAL_ORE)
+                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
+                .add(CobaltiteBlocks.COBALT_ORE)
+                .add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE)
+                .add(CobaltiteBlocks.OPAL_ORE)
+                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE);
+
     }
 
 }

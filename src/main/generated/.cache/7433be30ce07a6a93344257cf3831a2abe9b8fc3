@@ -1,0 +1,5 @@
+// 1.20.1	2025-08-09T02:16:29.7307786	Cobaltite/Block Loot Tables
+b755ddb122ad15faf9ba92a50fe05b222f986b4a data\cobaltite\loot_tables\blocks\cobalt_ore.json
+1c8c5c351be4f31d8c3bf08fcdd4d609ef411d5e data\cobaltite\loot_tables\blocks\opal_ore.json
+9becd24a10d6b704adb5b28d3e33f70fd5abf4a1 data\cobaltite\loot_tables\blocks\deepslate_opal_ore.json
+b89854f4b311a0e7ab4f856cefc2df4e04854d10 data\cobaltite\loot_tables\blocks\deepslate_cobalt_ore.json

@@ -21,7 +21,7 @@ public class CobaltiteItemGroups {
 
                         entries.add(CobaltiteItems.RAW_COBALT);
                         entries.add(CobaltiteItems.COBALT_INGOT);
-                        entries.add(CobaltiteItems.RAW_COBALT);
+                        entries.add(CobaltiteItems.OPAL);
 
                         //Generic Blocks
 

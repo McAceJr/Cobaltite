@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "cobaltite:cobalt_ore",
+    "cobaltite:deepslate_cobalt_ore",
+    "cobaltite:opal_ore",
+    "cobaltite:deepslate_opal_ore"
+  ]
+}
