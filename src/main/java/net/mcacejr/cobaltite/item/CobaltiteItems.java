@@ -15,6 +15,9 @@ public class CobaltiteItems {
     public static final Item COBALT_INGOT = registerItem("cobalt_ingot",
             new Item(new FabricItemSettings()));
 
+    public static final Item COBALT_NUGGET = registerItem("cobalt_nugget",
+            new Item(new FabricItemSettings()));
+
     public static final Item OPAL = registerItem("opal",
             new Item(new FabricItemSettings()));
 
