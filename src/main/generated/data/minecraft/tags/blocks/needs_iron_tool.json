@@ -4,6 +4,10 @@
     "cobaltite:cobalt_ore",
     "cobaltite:deepslate_cobalt_ore",
     "cobaltite:opal_ore",
-    "cobaltite:deepslate_opal_ore"
+    "cobaltite:deepslate_opal_ore",
+    "cobaltite:raw_cobalt_block",
+    "cobaltite:cobalt_block",
+    "cobaltite:opal_block",
+    "cobaltite:polished_opal_block"
   ]
 }

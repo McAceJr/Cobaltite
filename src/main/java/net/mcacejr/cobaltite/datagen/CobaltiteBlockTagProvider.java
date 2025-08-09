@@ -31,13 +31,21 @@ public class CobaltiteBlockTagProvider extends FabricTagProvider.BlockTagProvide
                 .add(CobaltiteBlocks.COBALT_ORE)
                 .add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE)
                 .add(CobaltiteBlocks.OPAL_ORE)
-                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE);
+                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE)
+                .add(CobaltiteBlocks.RAW_COBALT_BLOCK)
+                .add(CobaltiteBlocks.COBALT_BLOCK)
+                .add(CobaltiteBlocks.OPAL_BLOCK)
+                .add(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL)
                 .add(CobaltiteBlocks.COBALT_ORE)
                 .add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE)
                 .add(CobaltiteBlocks.OPAL_ORE)
-                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE);
+                .add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE)
+                .add(CobaltiteBlocks.RAW_COBALT_BLOCK)
+                .add(CobaltiteBlocks.COBALT_BLOCK)
+                .add(CobaltiteBlocks.OPAL_BLOCK)
+                .add(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
     }
 

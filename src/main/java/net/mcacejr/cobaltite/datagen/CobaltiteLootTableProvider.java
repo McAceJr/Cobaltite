@@ -5,6 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.mcacejr.cobaltite.block.CobaltiteBlocks;
 import net.mcacejr.cobaltite.item.CobaltiteItems;
 import net.minecraft.block.Block;
+import net.minecraft.block.ExperienceDroppingBlock;
 import net.minecraft.client.gl.Uniform;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
@@ -26,8 +27,15 @@ public class CobaltiteLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(CobaltiteBlocks.COBALT_ORE, CobaltOreDrops(CobaltiteBlocks.COBALT_ORE));
         addDrop(CobaltiteBlocks.DEEPSLATE_COBALT_ORE, CobaltOreDrops(CobaltiteBlocks.DEEPSLATE_COBALT_ORE));
+
         addDrop(CobaltiteBlocks.OPAL_ORE, OpalOreDrops(CobaltiteBlocks.OPAL_ORE));
         addDrop(CobaltiteBlocks.DEEPSLATE_OPAL_ORE, OpalOreDrops(CobaltiteBlocks.DEEPSLATE_OPAL_ORE));
+
+        addDrop(CobaltiteBlocks.RAW_COBALT_BLOCK);
+        addDrop(CobaltiteBlocks.COBALT_BLOCK);
+
+        addDrop(CobaltiteBlocks.OPAL_BLOCK);
+        addDrop(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
     }
 

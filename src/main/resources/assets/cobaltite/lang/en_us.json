@@ -2,12 +2,17 @@
 
   "item.cobaltite.raw_cobalt": "Raw Cobalt",
   "item.cobaltite.cobalt_ingot": "Cobalt Ingot",
+  "item.cobaltite.cobalt_nugget": "Cobalt Nugget",
   "item.cobaltite.opal": "Opal",
 
   "block.cobaltite.cobalt_ore": "Cobalt Ore",
   "block.cobaltite.deepslate_cobalt_ore": "Deepslate Cobalt Ore",
   "block.cobaltite.opal_ore": "Opal Ore",
   "block.cobaltite.deepslate_opal_ore": "Deepslate Opal Ore",
+  "block.cobaltite.raw_cobalt_block": "Block of Raw Cobalt",
+  "block.cobaltite.cobalt_block": "Block of Cobalt",
+  "block.cobaltite.opal_block": "Block of Opal",
+  "block.cobaltite.polished_opal_block": "Polished Block of Opal",
 
   "itemgroup.cobaltite_tab": "Cobaltite"
 

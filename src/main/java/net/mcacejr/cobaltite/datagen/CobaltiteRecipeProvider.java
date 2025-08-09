@@ -39,6 +39,17 @@ public class CobaltiteRecipeProvider extends FabricRecipeProvider {
         offerBlasting(exporter, COBALT_SMELTABLES, RecipeCategory.MISC, CobaltiteItems.COBALT_INGOT, 0.7f, 100, "cobalt_ingot");
         offerBlasting(exporter, OPAL_SMELTABLES, RecipeCategory.MISC, CobaltiteItems.OPAL, 0.7f, 100, "opal");
 
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CobaltiteItems.RAW_COBALT, RecipeCategory.MISC, CobaltiteBlocks.RAW_COBALT_BLOCK);
+
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, CobaltiteItems.COBALT_INGOT, RecipeCategory.MISC,
+                CobaltiteBlocks.COBALT_BLOCK, "cobalt_ingot_to_block", "cobalt_ingot_and_block");
+        offerReversibleCompactingRecipesWithReverseRecipeGroup(exporter, RecipeCategory.MISC, CobaltiteItems.COBALT_NUGGET, RecipeCategory.MISC,
+                CobaltiteItems.COBALT_INGOT, "cobalt_nugget_to_ingot", "cobalt_ingot_and_nugget");
+
+        offerReversibleCompactingRecipes(exporter, RecipeCategory.MISC, CobaltiteItems.OPAL, RecipeCategory.MISC, CobaltiteBlocks.OPAL_BLOCK);
+
+        offerPolishedStoneRecipe(exporter, RecipeCategory.MISC, CobaltiteBlocks.POLISHED_OPAL_BLOCK, CobaltiteBlocks.OPAL_BLOCK);
+
     }
 
 }

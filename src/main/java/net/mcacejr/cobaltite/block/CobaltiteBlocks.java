@@ -25,6 +25,18 @@ public class CobaltiteBlocks {
     public static final Block DEEPSLATE_OPAL_ORE = registerBlock("deepslate_opal_ore",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE)));
 
+    public static final Block RAW_COBALT_BLOCK = registerBlock("raw_cobalt_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
+
+    public static final Block COBALT_BLOCK = registerBlock("cobalt_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
+
+    public static final Block OPAL_BLOCK = registerBlock("opal_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+
+    public static final Block POLISHED_OPAL_BLOCK = registerBlock("polished_opal_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+
 
 
     private static Block registerBlock(String name, Block block) {

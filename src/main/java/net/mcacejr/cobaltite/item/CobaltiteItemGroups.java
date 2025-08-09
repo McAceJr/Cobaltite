@@ -21,6 +21,7 @@ public class CobaltiteItemGroups {
 
                         entries.add(CobaltiteItems.RAW_COBALT);
                         entries.add(CobaltiteItems.COBALT_INGOT);
+                        entries.add(CobaltiteItems.COBALT_NUGGET);
                         entries.add(CobaltiteItems.OPAL);
 
                         //Generic Blocks
@@ -29,6 +30,10 @@ public class CobaltiteItemGroups {
                         entries.add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE);
                         entries.add(CobaltiteBlocks.OPAL_ORE);
                         entries.add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE);
+                        entries.add(CobaltiteBlocks.RAW_COBALT_BLOCK);
+                        entries.add(CobaltiteBlocks.COBALT_BLOCK);
+                        entries.add(CobaltiteBlocks.OPAL_BLOCK);
+                        entries.add(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
                         //Tools & Weapons
 
