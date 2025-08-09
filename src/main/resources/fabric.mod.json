@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "cobaltite",
+	"version": "${version}",
+	"name": "Cobaltite",
+	"description": "A mod that adds cobalt, opal, and much more!",
+	"authors": [
+		"McAceJr"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/cobaltite/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.mcacejr.cobaltite.Cobaltite"
+		],
+		"fabric-datagen": [
+			"net.mcacejr.cobaltite.CobaltiteDataGenerator"
+		]
+	},
+	"mixins": [
+		"cobaltite.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
