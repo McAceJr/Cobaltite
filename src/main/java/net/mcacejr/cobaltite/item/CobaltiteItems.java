@@ -10,13 +10,13 @@ import net.minecraft.util.Identifier;
 public class CobaltiteItems {
 
     public static final Item RAW_COBALT = registerItem("raw_cobalt",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().fireproof()));
 
     public static final Item COBALT_INGOT = registerItem("cobalt_ingot",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().fireproof()));
 
     public static final Item COBALT_NUGGET = registerItem("cobalt_nugget",
-            new Item(new FabricItemSettings()));
+            new Item(new FabricItemSettings().fireproof()));
 
     public static final Item OPAL = registerItem("opal",
             new Item(new FabricItemSettings()));
