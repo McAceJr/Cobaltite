@@ -81,7 +81,6 @@ public class KaleidoscopeItem extends Item {
 
     public enum KaleidoscopeOptions {
         NOTCH(new Identifier("shaders/post/notch.json"), "notch"),
-        FXAA(new Identifier("shaders/post/fxaa.json"), "fxaa"),
         ART(new Identifier("shaders/post/art.json"), "art"),
         BUMPY(new Identifier("shaders/post/bumpy.json"), "bumpy"),
         BLOBS2(new Identifier("shaders/post/blobs2.json"), "blobs2"),
@@ -91,19 +90,17 @@ public class KaleidoscopeItem extends Item {
 		FLIP(new Identifier("shaders/post/flip.json"), "flip"),
 		INVERT(new Identifier("shaders/post/invert.json"), "invert"),
 		NTSC(new Identifier("shaders/post/ntsc.json"), "ntsc"),
-		OUTLINE(new Identifier("shaders/post/outline.json"), "outline"),
 		PHOSPHOR(new Identifier("shaders/post/phosphor.json"), "phosphor"),
 		SCAN_PINCUSHION(new Identifier("shaders/post/scan_pincushion.json"), "scan_pincushion"),
 		SOBEL(new Identifier("shaders/post/sobel.json"), "sobel"),
 		BITS(new Identifier("shaders/post/bits.json"), "bits"),
 		DESATURATE(new Identifier("shaders/post/desaturate.json"), "desaturate"),
 		GREEN(new Identifier("shaders/post/green.json"), "green"),
-        // Blur has been removed due to graphical errors
 		WOBBLE(new Identifier("shaders/post/wobble.json"), "wobble"),
 		BLOBS(new Identifier("shaders/post/blobs.json"), "blobs"),
-		ANTIALIAS(new Identifier("shaders/post/antialias.json"), "antialias"),
 		CREEPER(new Identifier("shaders/post/creeper.json"), "creeper"),
-		SPIDER(new Identifier("shaders/post/spider.json"), "spider");
+		SPIDER(new Identifier("shaders/post/spider.json"), "spider"),
+        BLINDING(new Identifier("shaders/post/blur.json"), "blinding");
 
         private final Identifier setting;
         private final String id;

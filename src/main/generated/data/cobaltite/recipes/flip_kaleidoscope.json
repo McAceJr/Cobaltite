@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "cobaltite:cobalt_ingot"
+    },
+    "i": {
+      "item": "minecraft:daylight_detector"
+    },
+    "o": {
+      "item": "cobaltite:opal"
+    }
+  },
+  "pattern": [
+    "o",
+    "i",
+    "c"
+  ],
+  "result": {
+    "item": "cobaltite:flip_kaleidoscope"
+  },
+  "show_notification": true
+}

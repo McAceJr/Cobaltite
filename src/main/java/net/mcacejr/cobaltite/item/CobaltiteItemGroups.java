@@ -37,7 +37,6 @@ public class CobaltiteItemGroups {
 
                         //Tools & Weapons
                         entries.add(CobaltiteItems.NOTCH_KALEIDOSCOPE);
-                        entries.add(CobaltiteItems.FXAA_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.ART_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.BUMPY_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.BLOBS2_KALEIDOSCOPE);
@@ -47,7 +46,6 @@ public class CobaltiteItemGroups {
                         entries.add(CobaltiteItems.FLIP_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.INVERT_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.NTSC_KALEIDOSCOPE);
-                        entries.add(CobaltiteItems.OUTLINE_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.PHOSPHOR_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.SCAN_PINCUSHION_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.SOBEL_KALEIDOSCOPE);
@@ -56,9 +54,9 @@ public class CobaltiteItemGroups {
                         entries.add(CobaltiteItems.GREEN_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.WOBBLE_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.BLOBS_KALEIDOSCOPE);
-                        entries.add(CobaltiteItems.ANTIALIAS_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.CREEPER_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.SPIDER_KALEIDOSCOPE);
+                        entries.add(CobaltiteItems.BLINDING_KALEIDOSCOPE);
 
 
                         //Enchantment Books

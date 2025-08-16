@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-14T20:33:21.8201109	Cobaltite/Model Definitions
+// 1.20.1	2025-08-16T19:35:42.4192649	Cobaltite/Model Definitions
 b9a3f4b9bd48b14866a46b18e28f24d192d59013 assets\cobaltite\blockstates\raw_cobalt_block.json
 0d4a7c70a301045eae17d0c765adc86d949df5d2 assets\cobaltite\blockstates\deepslate_cobalt_ore.json
 82e5994ddba29ccd21422893df309d064297a449 assets\cobaltite\models\item\opal_ore.json
@@ -10,8 +10,8 @@ a39b9b5a8c9f16ad65ca696a6fbfad017dbffd08 assets\cobaltite\models\block\cobalt_or
 dca0940d6818c2db1c879de0f5dd476b65dbc3b7 assets\cobaltite\models\block\opal_block.json
 c2afc6bb5952440ab30899810a60231430eef299 assets\cobaltite\models\block\raw_cobalt_block.json
 5eeeecab8ee1c7c855e8d2b1105b569f91ddfbb3 assets\cobaltite\models\block\polished_opal_block.json
-2720e9bffb34027224a4dcde910e47fc69904c54 assets\cobaltite\models\item\cobalt_ingot.json
 e6e31d8ee9c12fb0caf8ef47581885e593cbb5fe assets\cobaltite\models\item\opal.json
+2720e9bffb34027224a4dcde910e47fc69904c54 assets\cobaltite\models\item\cobalt_ingot.json
 ca0c2a02be2b5cee56bc4f8893a1bf567db72000 assets\cobaltite\models\block\deepslate_cobalt_ore.json
 395139682a840fb1e10f03f4b125e00abfb7777e assets\cobaltite\models\item\cobalt_ore.json
 931dee5b6bb2472a51cbbb3804696deaba0f3166 assets\cobaltite\blockstates\polished_opal_block.json

@@ -20,7 +20,6 @@ public class CobaltiteDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(CobaltiteModelProvider::new);
 		pack.addProvider(CobaltiteRecipeProvider::new);
 		pack.addProvider(CobaltiteWorldGenerator::new);
-
 	}
 
 	@Override

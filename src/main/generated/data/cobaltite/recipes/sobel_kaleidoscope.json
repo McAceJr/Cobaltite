@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "cobaltite:cobalt_ingot"
+    },
+    "i": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "o": {
+      "item": "cobaltite:opal"
+    }
+  },
+  "pattern": [
+    "o",
+    "i",
+    "c"
+  ],
+  "result": {
+    "item": "cobaltite:sobel_kaleidoscope"
+  },
+  "show_notification": true
+}

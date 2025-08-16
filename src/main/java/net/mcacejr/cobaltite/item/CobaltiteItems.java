@@ -23,8 +23,6 @@ public class CobaltiteItems {
 
     public static final Item NOTCH_KALEIDOSCOPE = registerItem("notch_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.NOTCH, new Item.Settings()));
-    public static final Item FXAA_KALEIDOSCOPE = registerItem("fxaa_kaleidoscope",
-            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.FXAA, new Item.Settings()));
     public static final Item ART_KALEIDOSCOPE = registerItem("art_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.ART, new Item.Settings()));
     public static final Item BUMPY_KALEIDOSCOPE = registerItem("bumpy_kaleidoscope",
@@ -43,8 +41,6 @@ public class CobaltiteItems {
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.INVERT, new Item.Settings()));
     public static final Item NTSC_KALEIDOSCOPE = registerItem("ntsc_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.NTSC, new Item.Settings()));
-    public static final Item OUTLINE_KALEIDOSCOPE = registerItem("outline_kaleidoscope",
-            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.OUTLINE, new Item.Settings()));
     public static final Item PHOSPHOR_KALEIDOSCOPE = registerItem("phosphor_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.PHOSPHOR, new Item.Settings()));
     public static final Item SCAN_PINCUSHION_KALEIDOSCOPE = registerItem("scan_pincushion_kaleidoscope",
@@ -60,13 +56,13 @@ public class CobaltiteItems {
     public static final Item WOBBLE_KALEIDOSCOPE = registerItem("wobble_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.WOBBLE, new Item.Settings()));
     public static final Item BLOBS_KALEIDOSCOPE = registerItem("blobs_kaleidoscope",
-            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.BLOBS, new Item.Settings()));
-    public static final Item ANTIALIAS_KALEIDOSCOPE = registerItem("antialias_kaleidoscope",
-            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.ANTIALIAS, new Item.Settings()));
+            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.BLOBS, new Item.Settings())); // Iffy
     public static final Item CREEPER_KALEIDOSCOPE = registerItem("creeper_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.CREEPER, new Item.Settings()));
     public static final Item SPIDER_KALEIDOSCOPE = registerItem("spider_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.SPIDER, new Item.Settings()));
+    public static final Item BLINDING_KALEIDOSCOPE = registerItem("blinding_kaleidoscope",
+            new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.BLINDING, new Item.Settings()));
 
     private static Item registerItem(String name, Item item) {
 

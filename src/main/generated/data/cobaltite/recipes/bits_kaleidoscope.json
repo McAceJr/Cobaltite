@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "cobaltite:cobalt_ingot"
+    },
+    "i": {
+      "item": "cobaltite:cobalt_nugget"
+    },
+    "o": {
+      "item": "cobaltite:opal"
+    }
+  },
+  "pattern": [
+    "o",
+    "i",
+    "c"
+  ],
+  "result": {
+    "item": "cobaltite:bits_kaleidoscope"
+  },
+  "show_notification": true
+}

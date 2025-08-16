@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "c": {
+      "item": "cobaltite:cobalt_ingot"
+    },
+    "i": {
+      "item": "minecraft:gray_dye"
+    },
+    "o": {
+      "item": "cobaltite:opal"
+    }
+  },
+  "pattern": [
+    "o",
+    "i",
+    "c"
+  ],
+  "result": {
+    "item": "cobaltite:desaturate_kaleidoscope"
+  },
+  "show_notification": true
+}
