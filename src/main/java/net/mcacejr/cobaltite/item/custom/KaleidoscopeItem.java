@@ -3,6 +3,7 @@ package net.mcacejr.cobaltite.item.custom;
 import net.mcacejr.cobaltite.mixin.GameRendererInvoker;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.client.option.Perspective;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -19,6 +20,7 @@ import java.util.List;
 
 public class KaleidoscopeItem extends Item {
     private final KaleidoscopeOptions effect;
+    private boolean effectActive;
 
     public KaleidoscopeItem(KaleidoscopeOptions effect, Settings settings) {
         super(settings.maxCount(1));
@@ -35,8 +37,9 @@ public class KaleidoscopeItem extends Item {
         if (world.isClient) {
             MinecraftClient client = MinecraftClient.getInstance();
 
-            if (client.gameRenderer != null) {
+            if (client.gameRenderer != null && client.options.getPerspective() == Perspective.FIRST_PERSON) {
                 ((GameRendererInvoker)client.gameRenderer).invokeLoadPostProcessor(effect.getSetting());
+                this.effectActive = true;
             }
         }
         user.playSound(SoundEvents.ITEM_SPYGLASS_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
@@ -57,6 +60,7 @@ public class KaleidoscopeItem extends Item {
 
             if (client.gameRenderer != null) {
                 client.gameRenderer.disablePostProcessor();
+                this.effectActive = false;
             }
         }
         return stack;
@@ -75,6 +79,27 @@ public class KaleidoscopeItem extends Item {
 
             if (client.gameRenderer != null) {
                 client.gameRenderer.disablePostProcessor();
+                this.effectActive = false;
+            }
+        }
+    }
+
+    @Override
+    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+        if (this.effectActive) {
+            if (world.isClient) {
+                MinecraftClient client = MinecraftClient.getInstance();
+                if (!(client.options.getPerspective() == Perspective.FIRST_PERSON)) {
+                    client.gameRenderer.disablePostProcessor();
+                    this.effectActive = false;
+                }
+            }
+        }
+        else if (world.isClient){
+            MinecraftClient client = MinecraftClient.getInstance();
+            if (client.options.getPerspective() == Perspective.FIRST_PERSON) {
+                ((GameRendererInvoker)client.gameRenderer).invokeLoadPostProcessor(effect.getSetting());
+                this.effectActive = true;
             }
         }
     }
