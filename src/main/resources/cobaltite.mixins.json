@@ -12,5 +12,8 @@
     "requireAnnotations": true
   },
   "client": [
+    "ItemRendererAccessor",
+    "ItemRendererMixin",
+    "ModelLoaderMixin"
   ]
 }
