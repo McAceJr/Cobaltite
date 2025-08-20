@@ -88,6 +88,7 @@ public class CobaltiteRecipeProvider extends FabricRecipeProvider {
                 .input('c', CobaltiteItems.COBALT_INGOT)
                 .criterion(hasItem(CobaltiteItems.COBALT_INGOT), conditionsFromItem(CobaltiteItems.COBALT_INGOT))
                 .criterion(hasItem(CobaltiteItems.OPAL), conditionsFromItem(CobaltiteItems.OPAL))
+                .group("kaleidoscope")
                 .offerTo(exporter);
     }
 
