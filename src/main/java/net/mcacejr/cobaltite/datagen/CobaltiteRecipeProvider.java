@@ -7,9 +7,11 @@ import net.mcacejr.cobaltite.item.CobaltiteItems;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.SmithingTransformRecipeJsonBuilder;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.tag.ItemTags;
 
@@ -31,6 +33,16 @@ public class CobaltiteRecipeProvider extends FabricRecipeProvider {
     public CobaltiteRecipeProvider(FabricDataOutput output) {
 
         super (output);
+
+    }
+
+    public static void offerReinforcementRecipe(Consumer<RecipeJsonProvider> exporter, Item nonReinforcedItem, Item reinforcedItem) {
+
+        SmithingTransformRecipeJsonBuilder.create(Ingredient.ofItems(CobaltiteItems.REINFORCEMENT_TEMPLATE),
+                Ingredient.ofItems(nonReinforcedItem), Ingredient.ofItems(CobaltiteItems.COBALT_INGOT),
+                RecipeCategory.TOOLS, reinforcedItem)
+                .criterion(hasItem(CobaltiteItems.REINFORCEMENT_TEMPLATE), conditionsFromItem(CobaltiteItems.REINFORCEMENT_TEMPLATE))
+                .offerTo(exporter, getItemPath(reinforcedItem) + "_smithing");
 
     }
 
@@ -75,6 +87,27 @@ public class CobaltiteRecipeProvider extends FabricRecipeProvider {
         offerKaleidoscope(exporter, Items.CREEPER_HEAD, CobaltiteItems.CREEPER_KALEIDOSCOPE);
         offerKaleidoscope(exporter, Items.FERMENTED_SPIDER_EYE, CobaltiteItems.SPIDER_KALEIDOSCOPE);
         offerKaleidoscope(exporter, Blocks.OBSIDIAN, CobaltiteItems.BLINDING_KALEIDOSCOPE);
+
+        offerReinforcementRecipe(exporter, Items.IRON_SWORD, CobaltiteItems.REINFORCED_IRON_SWORD);
+        offerReinforcementRecipe(exporter, Items.IRON_SHOVEL, CobaltiteItems.REINFORCED_IRON_SHOVEL);
+        offerReinforcementRecipe(exporter, Items.IRON_PICKAXE, CobaltiteItems.REINFORCED_IRON_PICKAXE);
+        offerReinforcementRecipe(exporter, Items.IRON_AXE, CobaltiteItems.REINFORCED_IRON_AXE);
+        offerReinforcementRecipe(exporter, Items.IRON_HOE, CobaltiteItems.REINFORCED_IRON_HOE);
+        offerReinforcementRecipe(exporter, Items.DIAMOND_SWORD, CobaltiteItems.REINFORCED_DIAMOND_SWORD);
+        offerReinforcementRecipe(exporter, Items.DIAMOND_SHOVEL, CobaltiteItems.REINFORCED_DIAMOND_SHOVEL);
+        offerReinforcementRecipe(exporter, Items.DIAMOND_PICKAXE, CobaltiteItems.REINFORCED_DIAMOND_PICKAXE);
+        offerReinforcementRecipe(exporter, Items.DIAMOND_AXE, CobaltiteItems.REINFORCED_DIAMOND_AXE);
+        offerReinforcementRecipe(exporter, Items.DIAMOND_HOE, CobaltiteItems.REINFORCED_DIAMOND_HOE);
+        offerReinforcementRecipe(exporter, Items.GOLDEN_SWORD, CobaltiteItems.REINFORCED_GOLDEN_SWORD);
+        offerReinforcementRecipe(exporter, Items.GOLDEN_SHOVEL, CobaltiteItems.REINFORCED_GOLDEN_SHOVEL);
+        offerReinforcementRecipe(exporter, Items.GOLDEN_PICKAXE, CobaltiteItems.REINFORCED_GOLDEN_PICKAXE);
+        offerReinforcementRecipe(exporter, Items.GOLDEN_AXE, CobaltiteItems.REINFORCED_GOLDEN_AXE);
+        offerReinforcementRecipe(exporter, Items.GOLDEN_HOE, CobaltiteItems.REINFORCED_GOLDEN_HOE);;
+        offerReinforcementRecipe(exporter, Items.NETHERITE_SWORD, CobaltiteItems.REINFORCED_NETHERITE_SWORD);
+        offerReinforcementRecipe(exporter, Items.NETHERITE_SHOVEL, CobaltiteItems.REINFORCED_NETHERITE_SHOVEL);
+        offerReinforcementRecipe(exporter, Items.NETHERITE_PICKAXE, CobaltiteItems.REINFORCED_NETHERITE_PICKAXE);
+        offerReinforcementRecipe(exporter, Items.NETHERITE_AXE, CobaltiteItems.REINFORCED_NETHERITE_AXE);
+        offerReinforcementRecipe(exporter, Items.NETHERITE_HOE, CobaltiteItems.REINFORCED_NETHERITE_HOE);
 
     }
 

@@ -7,6 +7,7 @@ import net.mcacejr.cobaltite.item.CobaltiteItems;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
+import net.minecraft.item.Items;
 
 public class CobaltiteModelProvider extends FabricModelProvider {
 
@@ -42,6 +43,8 @@ public class CobaltiteModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(CobaltiteItems.OPAL, Models.GENERATED);
 
+        itemModelGenerator.register(CobaltiteItems.REINFORCEMENT_TEMPLATE, Models.GENERATED);
+
         itemModelGenerator.register(CobaltiteItems.NOTCH_KALEIDOSCOPE, Models.GENERATED);
         itemModelGenerator.register(CobaltiteItems.ART_KALEIDOSCOPE, CobaltiteItems.NOTCH_KALEIDOSCOPE, Models.GENERATED);
         itemModelGenerator.register(CobaltiteItems.BUMPY_KALEIDOSCOPE, CobaltiteItems.NOTCH_KALEIDOSCOPE, Models.GENERATED);
@@ -64,6 +67,26 @@ public class CobaltiteModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CobaltiteItems.SPIDER_KALEIDOSCOPE, CobaltiteItems.NOTCH_KALEIDOSCOPE, Models.GENERATED);
         itemModelGenerator.register(CobaltiteItems.BLINDING_KALEIDOSCOPE, CobaltiteItems.NOTCH_KALEIDOSCOPE, Models.GENERATED);
 
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_IRON_SWORD, Items.IRON_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_IRON_SHOVEL, Items.IRON_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_IRON_PICKAXE, Items.IRON_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_IRON_AXE, Items.IRON_AXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_IRON_HOE, Items.IRON_HOE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_DIAMOND_SWORD, Items.DIAMOND_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_DIAMOND_SHOVEL, Items.DIAMOND_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_DIAMOND_PICKAXE, Items.DIAMOND_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_DIAMOND_AXE, Items.DIAMOND_AXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_DIAMOND_HOE, Items.DIAMOND_HOE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_GOLDEN_SWORD, Items.GOLDEN_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_GOLDEN_SHOVEL, Items.GOLDEN_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_GOLDEN_PICKAXE, Items.GOLDEN_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_GOLDEN_AXE, Items.GOLDEN_AXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_GOLDEN_HOE, Items.GOLDEN_HOE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_NETHERITE_SWORD, Items.NETHERITE_SWORD, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_NETHERITE_SHOVEL, Items.NETHERITE_SHOVEL, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_NETHERITE_PICKAXE, Items.NETHERITE_PICKAXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_NETHERITE_AXE, Items.NETHERITE_AXE, Models.HANDHELD);
+        itemModelGenerator.register(CobaltiteItems.REINFORCED_NETHERITE_HOE, Items.NETHERITE_HOE, Models.HANDHELD);
     }
 
 }

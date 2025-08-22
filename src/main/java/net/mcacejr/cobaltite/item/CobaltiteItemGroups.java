@@ -23,6 +23,7 @@ public class CobaltiteItemGroups {
                         entries.add(CobaltiteItems.COBALT_INGOT);
                         entries.add(CobaltiteItems.COBALT_NUGGET);
                         entries.add(CobaltiteItems.OPAL);
+                        entries.add(CobaltiteItems.REINFORCEMENT_TEMPLATE);
 
                         //Generic Blocks
 
@@ -36,6 +37,7 @@ public class CobaltiteItemGroups {
                         entries.add(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
                         //Tools & Weapons
+
                         entries.add(CobaltiteItems.NOTCH_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.ART_KALEIDOSCOPE);
                         entries.add(CobaltiteItems.BUMPY_KALEIDOSCOPE);

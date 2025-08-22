@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "addition": {
+    "item": "cobaltite:cobalt_ingot"
+  },
+  "base": {
+    "item": "minecraft:netherite_pickaxe"
+  },
+  "result": {
+    "item": "cobaltite:reinforced_netherite_pickaxe"
+  },
+  "template": {
+    "item": "cobaltite:reinforcement_template"
+  }
+}

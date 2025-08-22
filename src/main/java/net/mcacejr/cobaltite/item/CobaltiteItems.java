@@ -1,11 +1,17 @@
 package net.mcacejr.cobaltite.item;
 
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.mcacejr.cobaltite.Cobaltite;
-import net.mcacejr.cobaltite.item.custom.KaleidoscopeItem;
-import net.minecraft.item.Item;
+import net.mcacejr.cobaltite.item.custom.*;
+import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
+
+import java.util.List;
 
 public class CobaltiteItems {
 
@@ -63,6 +69,60 @@ public class CobaltiteItems {
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.SPIDER, new Item.Settings()));
     public static final Item BLINDING_KALEIDOSCOPE = registerItem("blinding_kaleidoscope",
             new KaleidoscopeItem(KaleidoscopeItem.KaleidoscopeOptions.BLINDING, new Item.Settings()));
+
+    public static final Item REINFORCEMENT_TEMPLATE = registerItem("reinforcement_template",
+            new ReinforcementTemplateItem(
+                    Text.translatable("reinforcement_template.applies_to.tooltip").formatted(Formatting.GRAY),
+                    Text.translatable("reinforcement_template.ingredients.tooltip").formatted(Formatting.GRAY),
+                    Text.translatable("reinforcement_template.title.tooltip").formatted(Formatting.BLUE),
+
+                    Text.translatable("reinforcement_template.base_slot_description.tooltip"),
+                    Text.translatable("reinforcement_template.additions_slot_description.tooltip")
+            ));
+
+    public static final Item REINFORCED_IRON_SWORD = registerItem("reinforced_iron_sword",
+            new ReinforcedSwordItem(CobaltiteToolMaterials.REINFORCED_IRON, 3, -2.4f, new FabricItemSettings()));
+    public static final Item REINFORCED_IRON_SHOVEL = registerItem("reinforced_iron_shovel",
+            new ReinforcedShovelItem(CobaltiteToolMaterials.REINFORCED_IRON, 1.5F, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_IRON_PICKAXE = registerItem("reinforced_iron_pickaxe",
+            new ReinforcedPickaxeItem(CobaltiteToolMaterials.REINFORCED_IRON, 1, -2.8f, new FabricItemSettings()));
+    public static final Item REINFORCED_IRON_AXE = registerItem("reinforced_iron_axe",
+            new ReinforcedAxeItem(CobaltiteToolMaterials.REINFORCED_IRON, 6, -3.1f, new FabricItemSettings()));
+    public static final Item REINFORCED_IRON_HOE = registerItem("reinforced_iron_hoe",
+            new ReinforcedHoeItem(CobaltiteToolMaterials.REINFORCED_IRON, -2, -1.0f, new FabricItemSettings()));
+
+    public static final Item REINFORCED_DIAMOND_SWORD = registerItem("reinforced_diamond_sword",
+            new ReinforcedSwordItem(CobaltiteToolMaterials.REINFORCED_DIAMOND, 3, -2.4f, new FabricItemSettings()));
+    public static final Item REINFORCED_DIAMOND_SHOVEL = registerItem("reinforced_diamond_shovel",
+            new ReinforcedShovelItem(CobaltiteToolMaterials.REINFORCED_DIAMOND, 1.5F, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_DIAMOND_PICKAXE = registerItem("reinforced_diamond_pickaxe",
+            new ReinforcedPickaxeItem(CobaltiteToolMaterials.REINFORCED_DIAMOND, 1, -2.8f, new FabricItemSettings()));
+    public static final Item REINFORCED_DIAMOND_AXE = registerItem("reinforced_diamond_axe",
+            new ReinforcedAxeItem(CobaltiteToolMaterials.REINFORCED_DIAMOND, 5, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_DIAMOND_HOE = registerItem("reinforced_diamond_hoe",
+            new ReinforcedHoeItem(CobaltiteToolMaterials.REINFORCED_DIAMOND, -3, 0.0f, new FabricItemSettings()));
+
+    public static final Item REINFORCED_GOLDEN_SWORD = registerItem("reinforced_golden_sword",
+            new ReinforcedSwordItem(CobaltiteToolMaterials.REINFORCED_GOLD, 3, -2.4f, new FabricItemSettings()));
+    public static final Item REINFORCED_GOLDEN_SHOVEL = registerItem("reinforced_golden_shovel",
+            new ReinforcedShovelItem(CobaltiteToolMaterials.REINFORCED_GOLD, 1.5F, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_GOLDEN_PICKAXE = registerItem("reinforced_golden_pickaxe",
+            new ReinforcedPickaxeItem(CobaltiteToolMaterials.REINFORCED_GOLD, 1, -2.8f, new FabricItemSettings()));
+    public static final Item REINFORCED_GOLDEN_AXE = registerItem("reinforced_golden_axe",
+            new ReinforcedAxeItem(CobaltiteToolMaterials.REINFORCED_GOLD, 6, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_GOLDEN_HOE = registerItem("reinforced_golden_hoe",
+            new ReinforcedHoeItem(CobaltiteToolMaterials.REINFORCED_GOLD, 0, -3.0f, new FabricItemSettings()));
+
+    public static final Item REINFORCED_NETHERITE_SWORD = registerItem("reinforced_netherite_sword",
+            new ReinforcedSwordItem(CobaltiteToolMaterials.REINFORCED_NETHERITE, 3, -2.4f, new FabricItemSettings()));
+    public static final Item REINFORCED_NETHERITE_SHOVEL = registerItem("reinforced_netherite_shovel",
+            new ReinforcedShovelItem(CobaltiteToolMaterials.REINFORCED_NETHERITE, 1.5F, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_NETHERITE_PICKAXE = registerItem("reinforced_netherite_pickaxe",
+            new ReinforcedPickaxeItem(CobaltiteToolMaterials.REINFORCED_NETHERITE, 1, -2.8f, new FabricItemSettings()));
+    public static final Item REINFORCED_NETHERITE_AXE = registerItem("reinforced_netherite_axe",
+            new ReinforcedAxeItem(CobaltiteToolMaterials.REINFORCED_NETHERITE, 5, -3.0f, new FabricItemSettings()));
+    public static final Item REINFORCED_NETHERITE_HOE = registerItem("reinforced_netherite_hoe",
+            new ReinforcedHoeItem(CobaltiteToolMaterials.REINFORCED_NETHERITE, -4, 0.0f, new FabricItemSettings()));
 
     private static Item registerItem(String name, Item item) {
 

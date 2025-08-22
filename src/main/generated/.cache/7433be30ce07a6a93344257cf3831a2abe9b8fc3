@@ -1,9 +1,9 @@
-// 1.20.1	2025-08-19T21:53:15.705494	Cobaltite/Block Loot Tables
-d97f5a52589fea962abad2e6d66ed6d00ac053fa data\cobaltite\loot_tables\blocks\opal_block.json
-9becd24a10d6b704adb5b28d3e33f70fd5abf4a1 data\cobaltite\loot_tables\blocks\deepslate_opal_ore.json
-d04b65896f6a2f8ce0cf8e10cc07c7c0fd9183b1 data\cobaltite\loot_tables\blocks\raw_cobalt_block.json
-b89854f4b311a0e7ab4f856cefc2df4e04854d10 data\cobaltite\loot_tables\blocks\deepslate_cobalt_ore.json
+// 1.20.1	2025-08-21T22:55:31.7515099	Cobaltite/Block Loot Tables
 c0570b6d8680c80203514447cc3a13a3107ff5a2 data\cobaltite\loot_tables\blocks\polished_opal_block.json
+d04b65896f6a2f8ce0cf8e10cc07c7c0fd9183b1 data\cobaltite\loot_tables\blocks\raw_cobalt_block.json
 8040f812731053ed733a1b3c0c5d93f8e8c0134d data\cobaltite\loot_tables\blocks\cobalt_block.json
-1c8c5c351be4f31d8c3bf08fcdd4d609ef411d5e data\cobaltite\loot_tables\blocks\opal_ore.json
 b755ddb122ad15faf9ba92a50fe05b222f986b4a data\cobaltite\loot_tables\blocks\cobalt_ore.json
+d97f5a52589fea962abad2e6d66ed6d00ac053fa data\cobaltite\loot_tables\blocks\opal_block.json
+1c8c5c351be4f31d8c3bf08fcdd4d609ef411d5e data\cobaltite\loot_tables\blocks\opal_ore.json
+9becd24a10d6b704adb5b28d3e33f70fd5abf4a1 data\cobaltite\loot_tables\blocks\deepslate_opal_ore.json
+b89854f4b311a0e7ab4f856cefc2df4e04854d10 data\cobaltite\loot_tables\blocks\deepslate_cobalt_ore.json
