@@ -13,7 +13,7 @@ public enum CobaltiteToolMaterials implements ToolMaterial {
             () -> Ingredient.ofItems(CobaltiteItems.COBALT_INGOT, Items.DIAMOND)),
     REINFORCED_GOLD(82, 12.0F, 0.0F, 0, 21,
             () -> Ingredient.ofItems(CobaltiteItems.COBALT_INGOT, Items.GOLD_INGOT)),
-    REINFORCED_NETHERITE(2781, 9.0F, 9.0F, 4, 14,
+    REINFORCED_NETHERITE(2781, 9.0F, 4.0F, 4, 14,
             () -> Ingredient.ofItems(CobaltiteItems.COBALT_INGOT, Items.NETHERITE_INGOT));
 
     private final int toolDurability;

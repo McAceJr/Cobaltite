@@ -1,6 +1,5 @@
 package net.mcacejr.cobaltite.item;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.mcacejr.cobaltite.Cobaltite;
 import net.mcacejr.cobaltite.item.custom.*;
 import net.minecraft.item.*;
@@ -9,9 +8,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
-
-import java.util.List;
 
 public class CobaltiteItems {
 
