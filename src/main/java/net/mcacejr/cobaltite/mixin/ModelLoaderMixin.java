@@ -25,13 +25,11 @@ public abstract class ModelLoaderMixin {
     @Inject(method = "<init>", at = @At(value = "INVOKE",
             target = "Lnet/minecraft/client/render/model/ModelLoader;addModel(Lnet/minecraft/client/util/ModelIdentifier;)V",
             ordinal = 3, shift = At.Shift.AFTER))
-    public void addNotchKaleidoscope(BlockColors blockColors, Profiler profiler,
+    public void addKaleidoscope(BlockColors blockColors, Profiler profiler,
                                      Map<Identifier, JsonUnbakedModel> jsonUnbakedModels,
                                      Map<Identifier, List<ModelLoader.SourceTrackedData>> blockStates, CallbackInfo ci) {
 
-        this.addModel(new ModelIdentifier(Cobaltite.MOD_ID, "notch_kaleidoscope_model", "inventory"));
-        this.addModel(new ModelIdentifier(Cobaltite.MOD_ID, "art_kaleidoscope_model", "inventory"));
-
+        this.addModel(new ModelIdentifier(Cobaltite.MOD_ID, "kaleidoscope_model", "inventory"));
     }
 
 }

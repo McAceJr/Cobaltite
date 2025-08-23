@@ -1,7 +1,7 @@
 package net.mcacejr.cobaltite.mixin;
 
 import net.mcacejr.cobaltite.Cobaltite;
-import net.mcacejr.cobaltite.item.CobaltiteItems;
+import net.mcacejr.cobaltite.item.custom.KaleidoscopeItem;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.render.model.BakedModel;
@@ -17,22 +17,12 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public class ItemRendererMixin {
 
     @ModifyVariable(method = "renderItem", at = @At(value = "HEAD"), argsOnly = true)
-    public BakedModel useNotchKaleidoscopeModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded,
-                                            MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        if (stack.isOf(CobaltiteItems.NOTCH_KALEIDOSCOPE) && renderMode != ModelTransformationMode.GUI) {
+    public BakedModel useKaleidoscopeModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded,
+                                           MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
+        if ((stack.getItem() instanceof KaleidoscopeItem) && renderMode != ModelTransformationMode.GUI) {
             return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(
-                    new ModelIdentifier(Cobaltite.MOD_ID, "notch_kaleidoscope_model", "inventory"));
+                    new ModelIdentifier(Cobaltite.MOD_ID, "kaleidoscope_model", "inventory"));
         }
         return value;
     }
-    @ModifyVariable(method = "renderItem", at = @At(value = "HEAD"), argsOnly = true)
-    public BakedModel useArtKaleidoscopeModel(BakedModel value, ItemStack stack, ModelTransformationMode renderMode, boolean leftHanded,
-                                                MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, int overlay) {
-        if (stack.isOf(CobaltiteItems.ART_KALEIDOSCOPE) && renderMode != ModelTransformationMode.GUI) {
-            return ((ItemRendererAccessor) this).mccourse$getModels().getModelManager().getModel(
-                    new ModelIdentifier(Cobaltite.MOD_ID, "art_kaleidoscope_model", "inventory"));
-        }
-        return value;
-    }
-
 }
