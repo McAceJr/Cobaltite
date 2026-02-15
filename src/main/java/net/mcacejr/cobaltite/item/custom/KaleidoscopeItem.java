@@ -28,6 +28,16 @@ public class KaleidoscopeItem extends Item {
     }
 
     @Override
+    public Text getName() {
+        return Text.translatable("item.cobaltite.kaleidoscope");
+    }
+
+    @Override
+    public Text getName(ItemStack itemStack) {
+        return Text.translatable("item.cobaltite.kaleidoscope");
+    }
+
+    @Override
     public int getMaxUseTime(ItemStack stack) {
         return 1200;
     }
