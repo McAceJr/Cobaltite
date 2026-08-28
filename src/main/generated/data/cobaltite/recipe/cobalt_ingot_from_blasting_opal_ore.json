@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "experience": 1.0,
+  "group": "opal",
+  "ingredient": "cobaltite:opal_ore",
+  "result": {
+    "id": "cobaltite:cobalt_ingot"
+  }
+}

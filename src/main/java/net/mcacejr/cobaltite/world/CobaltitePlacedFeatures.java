@@ -1,50 +1,37 @@
 package net.mcacejr.cobaltite.world;
 
 import net.mcacejr.cobaltite.Cobaltite;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.util.Identifier;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.PlacedFeature;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
-
-import java.util.List;
+import net.minecraft.core.Holder;
+import net.minecraft.core.HolderGetter;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
+import net.minecraft.world.level.levelgen.feature.Feature;
+import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class CobaltitePlacedFeatures {
+    public static final ResourceKey<PlacedFeature> ORE_COBALT = register("cobalt_ore_placed");
+    public static final ResourceKey<PlacedFeature> ORE_OPAL = register("opal_ore_placed");
 
-    public static final RegistryKey<PlacedFeature> COBALT_ORE_PLACED_KEY = registerKey("cobalt_ore_placed");
+    public static void bootstrap(BootstrapContext<PlacedFeature> context) {
+        HolderGetter<Feature> configuredFeatures = context.lookup(Registries.FEATURE);
+        Holder.Reference<Feature> oreCobalt = configuredFeatures.getOrThrow(CobaltiteOreFeatures.ORE_COBALT);
+        Holder.Reference<Feature> oreOpal = configuredFeatures.getOrThrow(CobaltiteOreFeatures.ORE_OPAL);
 
-    public static final RegistryKey<PlacedFeature> OPAL_ORE_PLACED_KEY = registerKey("opal_ore_placed");
+        PlacementUtils.register(context, ORE_COBALT, oreCobalt,
+                CobaltiteOrePlacements.commonOrePlacement(12,
+                        HeightRangePlacement.triangle(VerticalAnchor.absolute(-60), VerticalAnchor.absolute(100))));
 
-    public static void boostrap(Registerable<PlacedFeature> context) {
-
-        var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
-
-        register(context, COBALT_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(CobaltiteConfiguredFeatures.COBALT_ORE_KEY),
-                CobaltiteOrePlacement.modifiersWithCount(12,
-                        HeightRangePlacementModifier.trapezoid(YOffset.fixed(-60), YOffset.fixed(100))));
-
-        register(context, OPAL_ORE_PLACED_KEY, configuredFeatureRegistryEntryLookup.getOrThrow(CobaltiteConfiguredFeatures.OPAL_ORE_KEY),
-                CobaltiteOrePlacement.modifiersWithCount(12,
-                        HeightRangePlacementModifier.uniform(YOffset.fixed(-70), YOffset.fixed(5))));
-
+        PlacementUtils.register(context, ORE_OPAL, oreOpal,
+                CobaltiteOrePlacements.commonOrePlacement(12,
+                        HeightRangePlacement.uniform(VerticalAnchor.absolute(-70), VerticalAnchor.absolute(5))));
     }
 
-    public static RegistryKey<PlacedFeature> registerKey(String name) {
-
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(Cobaltite.MOD_ID, name));
-
+    public static ResourceKey<PlacedFeature> register(String key) {
+        return ResourceKey.create(Registries.PLACED_FEATURE, Identifier.fromNamespaceAndPath(Cobaltite.MOD_ID, key));
     }
-
-    private static void register(Registerable<PlacedFeature> context, RegistryKey<PlacedFeature> key, RegistryEntry<ConfiguredFeature<?, ?>> configuration,
-                                 List<PlacementModifier> modifiers) {
-
-        context.register(key, new PlacedFeature(configuration, List.copyOf(modifiers)));
-
-    }
-
 }

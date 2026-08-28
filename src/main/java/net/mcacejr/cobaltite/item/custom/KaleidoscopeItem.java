@@ -1,156 +1,23 @@
 package net.mcacejr.cobaltite.item.custom;
 
-import net.mcacejr.cobaltite.mixin.GameRendererInvoker;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.item.TooltipContext;
-import net.minecraft.client.option.Perspective;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.Text;
-import net.minecraft.util.*;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
-
-import java.util.List;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.ItemUseAnimation;
+import org.jspecify.annotations.NonNull;
 
 public class KaleidoscopeItem extends Item {
-    private final KaleidoscopeOptions effect;
-    private boolean effectActive;
-
-    public KaleidoscopeItem(KaleidoscopeOptions effect, Settings settings) {
-        super(settings.maxCount(1));
-        this.effect = effect;
+    public KaleidoscopeItem(Item.Properties properties) {
+        super(properties);
     }
 
     @Override
-    public Text getName() {
-        return Text.translatable("item.cobaltite.kaleidoscope");
-    }
-
-    @Override
-    public Text getName(ItemStack itemStack) {
-        return Text.translatable("item.cobaltite.kaleidoscope");
-    }
-
-    @Override
-    public int getMaxUseTime(ItemStack stack) {
+    public int getUseDuration(@NonNull ItemStack itemStack, @NonNull LivingEntity user) {
         return 1200;
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        if (world.isClient) {
-            MinecraftClient client = MinecraftClient.getInstance();
-
-            if (client.gameRenderer != null && client.options.getPerspective() == Perspective.FIRST_PERSON) {
-                ((GameRendererInvoker)client.gameRenderer).invokeLoadPostProcessor(effect.getSetting());
-                this.effectActive = true;
-            }
-        }
-        user.playSound(SoundEvents.ITEM_SPYGLASS_USE, SoundCategory.PLAYERS, 1.0F, 1.0F);
-
-        return ItemUsage.consumeHeldItem(world, user, hand);
-    }
-
-    @Override
-    public UseAction getUseAction(ItemStack stack) {
-        return UseAction.SPYGLASS;
-    }
-
-    @Override
-    public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
-        user.playSound(SoundEvents.ITEM_SPYGLASS_STOP_USING, 1.0F, 1.0F);
-        if (world.isClient) {
-            MinecraftClient client = MinecraftClient.getInstance();
-
-            if (client.gameRenderer != null) {
-                client.gameRenderer.disablePostProcessor();
-                this.effectActive = false;
-            }
-        }
-        return stack;
-    }
-
-    @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable(effect.getId() + "_kaleidoscope_tooltip").formatted(Formatting.LIGHT_PURPLE));
-    }
-
-    @Override
-    public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
-        user.playSound(SoundEvents.ITEM_SPYGLASS_STOP_USING, 1.0F, 1.0F);
-        if (world.isClient) {
-            MinecraftClient client = MinecraftClient.getInstance();
-
-            if (client.gameRenderer != null) {
-                client.gameRenderer.disablePostProcessor();
-                this.effectActive = false;
-            }
-        }
-    }
-
-    @Override
-    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
-        if (this.effectActive) {
-            if (world.isClient) {
-                MinecraftClient client = MinecraftClient.getInstance();
-                if (!(client.options.getPerspective() == Perspective.FIRST_PERSON)) {
-                    client.gameRenderer.disablePostProcessor();
-                    this.effectActive = false;
-                }
-            }
-        }
-        else if (world.isClient){
-            MinecraftClient client = MinecraftClient.getInstance();
-            if (client.options.getPerspective() == Perspective.FIRST_PERSON) {
-                ((GameRendererInvoker)client.gameRenderer).invokeLoadPostProcessor(effect.getSetting());
-                this.effectActive = true;
-            }
-        }
-    }
-
-    public enum KaleidoscopeOptions {
-        NOTCH(new Identifier("shaders/post/notch.json"), "notch"),
-        ART(new Identifier("shaders/post/art.json"), "art"),
-        BUMPY(new Identifier("shaders/post/bumpy.json"), "bumpy"),
-        BLOBS2(new Identifier("shaders/post/blobs2.json"), "blobs2"),
-        PENCIL(new Identifier("shaders/post/pencil.json"), "pencil"),
-        COLOR_CONVOLVE(new Identifier("shaders/post/color_convolve.json"), "color_convolve"),
-        DECONVERGE(new Identifier("shaders/post/deconverge.json"), "deconverge"),
-		FLIP(new Identifier("shaders/post/flip.json"), "flip"),
-		INVERT(new Identifier("shaders/post/invert.json"), "invert"),
-		NTSC(new Identifier("shaders/post/ntsc.json"), "ntsc"),
-		PHOSPHOR(new Identifier("shaders/post/phosphor.json"), "phosphor"),
-		SCAN_PINCUSHION(new Identifier("shaders/post/scan_pincushion.json"), "scan_pincushion"),
-		SOBEL(new Identifier("shaders/post/sobel.json"), "sobel"),
-		BITS(new Identifier("shaders/post/bits.json"), "bits"),
-		DESATURATE(new Identifier("shaders/post/desaturate.json"), "desaturate"),
-		GREEN(new Identifier("shaders/post/green.json"), "green"),
-		WOBBLE(new Identifier("shaders/post/wobble.json"), "wobble"),
-		BLOBS(new Identifier("shaders/post/blobs.json"), "blobs"),
-		CREEPER(new Identifier("shaders/post/creeper.json"), "creeper"),
-		SPIDER(new Identifier("shaders/post/spider.json"), "spider"),
-        BLINDING(new Identifier("shaders/post/blur.json"), "blinding");
-
-        private final Identifier setting;
-        private final String id;
-
-        KaleidoscopeOptions(Identifier setting, String id) {
-            this.setting = setting;
-            this.id = id;
-        }
-
-        public Identifier getSetting() {
-            return this.setting;
-        }
-
-        public String getId() {
-            return this.id;
-        }
+    public @NonNull ItemUseAnimation getUseAnimation(@NonNull ItemStack itemStack) {
+        return ItemUseAnimation.SPYGLASS;
     }
 }

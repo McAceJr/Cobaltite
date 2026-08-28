@@ -1,9 +1,10 @@
 package net.mcacejr.cobaltite.item.custom;
 
-import net.minecraft.item.HoeItem;
-import net.minecraft.item.SmithingTemplateItem;
-import net.minecraft.text.Text;
-import net.minecraft.util.Identifier;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.SmithingTemplateItem;
 
 import java.util.List;
 
@@ -16,10 +17,13 @@ public class ReinforcementTemplateItem extends SmithingTemplateItem {
     private static final Identifier HOE_SLOT;
     private static final Identifier INGOT_SLOT;
 
-    public ReinforcementTemplateItem(Text appliesToText, Text ingredientsText, Text titleText,
-                                     Text baseSlotDescriptionText, Text additionsSlotDescriptionText) {
-        super(appliesToText, ingredientsText, titleText, baseSlotDescriptionText,
-                additionsSlotDescriptionText, getReinforcementEmptyBaseSlotTextures(), getReinforcementEmptyAdditionsSlotTextures());
+    public static final Component APPLIES_TO = Component.translatable("reinforcement_template.applies_to.tooltip").withStyle(ChatFormatting.GRAY);
+    public static final Component INGREDIENTS = Component.translatable("reinforcement_template.ingredients.tooltip").withStyle(ChatFormatting.GRAY);
+    public static final Component BASE_SLOT_DESCRIPTION = Component.translatable("reinforcement_template.base_slot_description.tooltip");
+    public static final Component ADDITIONS_SLOT_DESCRIPTION = Component.translatable("reinforcement_template.additions_slot_description.tooltip");
+
+    public ReinforcementTemplateItem(Item.Properties properties) {
+        super(APPLIES_TO, INGREDIENTS, BASE_SLOT_DESCRIPTION, ADDITIONS_SLOT_DESCRIPTION, getReinforcementEmptyBaseSlotTextures(), getReinforcementEmptyAdditionsSlotTextures(), properties);
     }
 
     public static List<Identifier> getReinforcementEmptyBaseSlotTextures() {
@@ -35,14 +39,12 @@ public class ReinforcementTemplateItem extends SmithingTemplateItem {
     }
 
     static {
-
-        SWORD_SLOT = new Identifier("item/empty_slot_sword");
-        SHOVEL_SLOT = new Identifier("item/empty_slot_shovel");
-        PICKAXE_SLOT = new Identifier("item/empty_slot_pickaxe");
-        AXE_SLOT = new Identifier("item/empty_slot_axe");
-        HOE_SLOT = new Identifier("item/empty_slot_hoe");
-        INGOT_SLOT = new Identifier("item/empty_slot_ingot");
-
+        SWORD_SLOT = Identifier.withDefaultNamespace("item/empty_slot_sword");
+        SHOVEL_SLOT = Identifier.withDefaultNamespace("item/empty_slot_shovel");
+        PICKAXE_SLOT = Identifier.withDefaultNamespace("item/empty_slot_pickaxe");
+        AXE_SLOT = Identifier.withDefaultNamespace("item/empty_slot_axe");
+        HOE_SLOT = Identifier.withDefaultNamespace("item/empty_slot_hoe");
+        INGOT_SLOT = Identifier.withDefaultNamespace("item/empty_slot_ingot");
     }
 
 }

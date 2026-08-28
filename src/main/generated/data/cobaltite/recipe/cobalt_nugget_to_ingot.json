@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "cobalt_ingot_and_nugget",
+  "key": {
+    "#": "cobaltite:cobalt_nugget"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "cobaltite:cobalt_ingot"
+  }
+}

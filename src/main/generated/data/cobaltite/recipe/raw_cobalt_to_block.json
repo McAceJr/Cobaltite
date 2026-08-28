@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "raw_cobalt_and_block",
+  "key": {
+    "#": "cobaltite:raw_cobalt"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "cobaltite:raw_cobalt_block"
+  }
+}

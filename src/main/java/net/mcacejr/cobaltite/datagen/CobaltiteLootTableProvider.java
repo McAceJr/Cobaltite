@@ -1,64 +1,31 @@
 package net.mcacejr.cobaltite.datagen;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
-import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 import net.mcacejr.cobaltite.block.CobaltiteBlocks;
 import net.mcacejr.cobaltite.item.CobaltiteItems;
-import net.minecraft.block.Block;
-import net.minecraft.block.ExperienceDroppingBlock;
-import net.minecraft.client.gl.Uniform;
-import net.minecraft.data.server.loottable.BlockLootTableGenerator;
-import net.minecraft.enchantment.Enchantments;
-import net.minecraft.loot.LootTable;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.entry.LeafEntry;
-import net.minecraft.loot.function.ApplyBonusLootFunction;
-import net.minecraft.loot.function.SetCountLootFunction;
-import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.core.HolderLookup;
 
-public class CobaltiteLootTableProvider extends FabricBlockLootTableProvider {
 
-    public CobaltiteLootTableProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+import java.util.concurrent.CompletableFuture;
+
+public class CobaltiteLootTableProvider extends FabricBlockLootSubProvider {
+    public CobaltiteLootTableProvider(FabricPackOutput packOutput, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(packOutput, registriesFuture);
     }
 
     @Override
     public void generate() {
+        this.add(CobaltiteBlocks.COBALT_ORE, this.createOreDrop(CobaltiteBlocks.COBALT_ORE, CobaltiteItems.RAW_COBALT));
+        this.add(CobaltiteBlocks.DEEPSLATE_COBALT_ORE, this.createOreDrop(CobaltiteBlocks.DEEPSLATE_COBALT_ORE, CobaltiteItems.RAW_COBALT));
 
-        addDrop(CobaltiteBlocks.COBALT_ORE, CobaltOreDrops(CobaltiteBlocks.COBALT_ORE));
-        addDrop(CobaltiteBlocks.DEEPSLATE_COBALT_ORE, CobaltOreDrops(CobaltiteBlocks.DEEPSLATE_COBALT_ORE));
+        this.add(CobaltiteBlocks.OPAL_ORE, this.createOreDrop(CobaltiteBlocks.OPAL_ORE, CobaltiteItems.OPAL));
+        this.add(CobaltiteBlocks.DEEPSLATE_OPAL_ORE, this.createOreDrop(CobaltiteBlocks.DEEPSLATE_OPAL_ORE, CobaltiteItems.OPAL));
 
-        addDrop(CobaltiteBlocks.OPAL_ORE, OpalOreDrops(CobaltiteBlocks.OPAL_ORE));
-        addDrop(CobaltiteBlocks.DEEPSLATE_OPAL_ORE, OpalOreDrops(CobaltiteBlocks.DEEPSLATE_OPAL_ORE));
+        this.dropSelf(CobaltiteBlocks.RAW_COBALT_BLOCK);
+        this.dropSelf(CobaltiteBlocks.COBALT_BLOCK);
 
-        addDrop(CobaltiteBlocks.RAW_COBALT_BLOCK);
-        addDrop(CobaltiteBlocks.COBALT_BLOCK);
-
-        addDrop(CobaltiteBlocks.OPAL_BLOCK);
-        addDrop(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
-
+        this.dropSelf(CobaltiteBlocks.OPAL_BLOCK);
+        this.dropSelf(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
     }
-
-    public LootTable.Builder CobaltOreDrops(Block drop){
-
-        return BlockLootTableGenerator.dropsWithSilkTouch(
-                drop, this.applyExplosionDecay(
-                        drop, ((LeafEntry.Builder<?>)
-                                ItemEntry.builder(CobaltiteItems.RAW_COBALT).apply(SetCountLootFunction
-                                        .builder(UniformLootNumberProvider.create(1.0f, 1.0f))))
-                                .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
-
-    }
-
-    public LootTable.Builder OpalOreDrops(Block drop){
-
-        return BlockLootTableGenerator.dropsWithSilkTouch(
-                drop, this.applyExplosionDecay(
-                        drop, ((LeafEntry.Builder<?>)
-                                ItemEntry.builder(CobaltiteItems.OPAL).apply(SetCountLootFunction
-                                        .builder(UniformLootNumberProvider.create(1.0f, 3.0f))))
-                                .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
-
-    }
-
 }

@@ -1,0 +1,5 @@
+// 26.3-snapshot-10	-999999999-01-01T00:00:00	Cobaltite/CobaltiteDynamicRegistryProvider
+1841cca9b100d377ae170fa6326022257b5d3f36 data/cobaltite/worldgen/feature/ore_cobalt.json
+fa2ac2dc04c2529485a36707dd800a1d733e85f2 data/cobaltite/worldgen/feature/ore_opal.json
+303aea4795560198d31bcaeeb223875ee2c823e6 data/cobaltite/worldgen/placed_feature/cobalt_ore_placed.json
+08d53a03a68155353e4840a14b2693c9679ebc37 data/cobaltite/worldgen/placed_feature/opal_ore_placed.json

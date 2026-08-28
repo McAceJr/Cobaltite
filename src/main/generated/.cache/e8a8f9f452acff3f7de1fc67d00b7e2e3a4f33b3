@@ -1,5 +1,5 @@
-// 1.20.1	2026-02-14T21:14:12.8181724	Cobaltite/Tags for minecraft:block
-31d0204c509f4ff9f48ee3cbfdbedb2b2c59ee10 data\minecraft\tags\blocks\deepslate_ore_replaceables.json
-9b33ba55c9e384d5c1d22eef59b215b91cf3f1a2 data\minecraft\tags\blocks\stone_ore_replaceables.json
-82a760a58a12c3b0bdf42c4d819167e4d8e34050 data\minecraft\tags\blocks\needs_iron_tool.json
-82a760a58a12c3b0bdf42c4d819167e4d8e34050 data\minecraft\tags\blocks\mineable\pickaxe.json
+// 26.3-snapshot-10	-999999999-01-01T00:00:00	Cobaltite/Tags for minecraft:block
+166ce378730ed0424f8fb559596a1b7dfff5c680 data/minecraft/tags/block/deepslate_ore_replaceables.json
+1395e4dcee05112516df7d736e5c3359ef210b5e data/minecraft/tags/block/mineable/pickaxe.json
+1395e4dcee05112516df7d736e5c3359ef210b5e data/minecraft/tags/block/needs_iron_tool.json
+e20b2e23d536a7ffca9f7fe2d9a096d4b96d7e9b data/minecraft/tags/block/stone_ore_replaceables.json

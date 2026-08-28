@@ -3,7 +3,7 @@ package net.mcacejr.cobaltite;
 import net.fabricmc.api.ModInitializer;
 
 import net.mcacejr.cobaltite.block.CobaltiteBlocks;
-import net.mcacejr.cobaltite.item.CobaltiteItemGroups;
+import net.mcacejr.cobaltite.item.CobaltiteCreativeModeTabs;
 import net.mcacejr.cobaltite.item.CobaltiteItems;
 import net.mcacejr.cobaltite.world.gen.CobaltiteWorldGeneration;
 import org.slf4j.Logger;
@@ -17,11 +17,9 @@ public class Cobaltite implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-
-		CobaltiteItems.registerModItems();
-		CobaltiteItemGroups.registerItemGroups();
+		CobaltiteItems.registerItems();
+		CobaltiteCreativeModeTabs.registerCreativeModetabs();
 		CobaltiteBlocks.registerModBlocks();
 		CobaltiteWorldGeneration.generateCobaltiteWorldGen();
-
 	}
 }

@@ -1,62 +1,85 @@
 package net.mcacejr.cobaltite.block;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.mcacejr.cobaltite.Cobaltite;
-import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.Identifier;
+import net.mcacejr.cobaltite.item.CobaltiteItems;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.references.BlockItemId;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+
+import java.util.function.Function;
 
 public class CobaltiteBlocks {
+    public static final Block COBALT_ORE = registerBlock(
+            CobaltiteBlockItemIds.COBALT_ORE,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_ORE)
+    );
 
-    public static final Block COBALT_ORE = registerBlock("cobalt_ore",
-            new Block(FabricBlockSettings.copyOf(Blocks.GOLD_ORE)));
+    public static final Block DEEPSLATE_COBALT_ORE = registerBlock(
+            CobaltiteBlockItemIds.DEEPSLATE_COBALT_ORE,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_GOLD_ORE)
+    );
 
-    public static final Block DEEPSLATE_COBALT_ORE = registerBlock("deepslate_cobalt_ore",
-            new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_GOLD_ORE)));
+    public static final Block OPAL_ORE = registerBlock(
+            CobaltiteBlockItemIds.OPAL_ORE,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_ORE)
+    );
 
-    public static final Block OPAL_ORE = registerBlock("opal_ore",
-            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_ORE)));
+    public static final Block DEEPSLATE_OPAL_ORE = registerBlock(
+            CobaltiteBlockItemIds.DEEPSLATE_OPAL_ORE,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.DEEPSLATE_EMERALD_ORE)
+    );
 
-    public static final Block DEEPSLATE_OPAL_ORE = registerBlock("deepslate_opal_ore",
-            new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_EMERALD_ORE)));
+    public static final Block RAW_COBALT_BLOCK = registerBlock(
+            CobaltiteBlockItemIds.RAW_COBALT_BLOCK,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.RAW_GOLD_BLOCK)
+    );
 
-    public static final Block RAW_COBALT_BLOCK = registerBlock("raw_cobalt_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.RAW_GOLD_BLOCK)));
+    public static final Block COBALT_BLOCK = registerBlock(
+            CobaltiteBlockItemIds.COBALT_BLOCK,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.GOLD_BLOCK)
+    );
 
-    public static final Block COBALT_BLOCK = registerBlock("cobalt_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.GOLD_BLOCK)));
+    public static final Block OPAL_BLOCK = registerBlock(
+            CobaltiteBlockItemIds.OPAL_BLOCK,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_BLOCK)
+    );
 
-    public static final Block OPAL_BLOCK = registerBlock("opal_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
+    public static final Block POLISHED_OPAL_BLOCK = registerBlock(
+            CobaltiteBlockItemIds.POLISHED_OPAL_BLOCK,
+            Block::new,
+            BlockBehaviour.Properties.ofFullCopy(Blocks.EMERALD_BLOCK)
+    );
 
-    public static final Block POLISHED_OPAL_BLOCK = registerBlock("polished_opal_block",
-            new Block(FabricBlockSettings.copyOf(Blocks.EMERALD_BLOCK)));
-
-
-
-    private static Block registerBlock(String name, Block block) {
-
-        registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, new Identifier(Cobaltite.MOD_ID, name), block);
-
+    public static Block registerBlock(BlockItemId key, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties, boolean registerItem) {
+        Block block = blockFactory.apply(properties.setId(key.block()));
+        if (registerItem) {
+            registerBlockItem(key, block);
+        }
+        return Registry.register(BuiltInRegistries.BLOCK, key.block(), block);
     }
 
-    private static Item registerBlockItem(String name, Block block) {
+    public static Block registerBlock(BlockItemId key, Function<BlockBehaviour.Properties, Block> blockFactory, BlockBehaviour.Properties properties) {
+        return registerBlock(key, blockFactory, properties, true);
+    }
 
-        return Registry.register(Registries.ITEM, new Identifier(Cobaltite.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
-
+    public static void registerBlockItem(BlockItemId key, Block block) {
+        CobaltiteItems.registerItem(key.item(), properties -> new BlockItem(block, properties), new Item.Properties());
     }
 
     public static void registerModBlocks() {
-
         Cobaltite.LOGGER.info("Registering Cobaltite Blocks for " + Cobaltite.MOD_ID);
-
     }
 
 }

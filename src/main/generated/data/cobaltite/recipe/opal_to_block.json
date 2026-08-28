@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "opal_and_block",
+  "key": {
+    "#": "cobaltite:opal"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "cobaltite:opal_block"
+  }
+}

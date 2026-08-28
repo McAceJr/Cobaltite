@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "experience": 0.7,
+  "group": "cobaltite_ingot",
+  "ingredient": "cobaltite:deepslate_cobalt_ore",
+  "result": {
+    "id": "cobaltite:cobalt_ingot"
+  }
+}

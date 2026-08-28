@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "cobalt_block_and_ingot",
+  "key": {
+    "#": "cobaltite:cobalt_ingot"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "cobaltite:cobalt_block"
+  }
+}
