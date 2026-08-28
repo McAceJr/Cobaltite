@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:diamond_spear",
+  "result": {
+    "id": "minecraft:diamond_spear"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

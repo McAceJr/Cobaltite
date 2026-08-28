@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipes": "cobaltite:wooden_spear_reinforcement"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wooden_spear": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wooden_spear"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wooden_spear"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "cobaltite:wooden_spear_reinforcement"
+    ]
+  }
+}

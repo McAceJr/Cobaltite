@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:netherite_shovel",
+  "result": {
+    "id": "minecraft:netherite_shovel"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

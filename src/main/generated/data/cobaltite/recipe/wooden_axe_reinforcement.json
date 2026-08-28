@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:wooden_axe",
+  "result": {
+    "id": "minecraft:wooden_axe"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

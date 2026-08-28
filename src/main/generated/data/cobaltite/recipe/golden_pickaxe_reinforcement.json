@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:golden_pickaxe",
+  "result": {
+    "id": "minecraft:golden_pickaxe"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

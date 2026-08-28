@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:stone_shovel",
+  "result": {
+    "id": "minecraft:stone_shovel"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

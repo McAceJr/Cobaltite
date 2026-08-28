@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:iron_pickaxe",
+  "result": {
+    "id": "minecraft:iron_pickaxe"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

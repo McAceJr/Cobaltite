@@ -30,5 +30,5 @@
   "reinforcement_template.base_slot_description.tooltip": "Any Tool",
   "reinforcement_template.additions_slot_description.tooltip": "Cobalt Ingot",
 
-  "tooltip.cobaltite.reinforceditem.tooltip": "Reinforced"
+  "item.cobaltite.reinforced.info": "Reinforced"
 }

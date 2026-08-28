@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:netherite_axe",
+  "result": {
+    "id": "minecraft:netherite_axe"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:golden_shovel",
+  "result": {
+    "id": "minecraft:golden_shovel"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

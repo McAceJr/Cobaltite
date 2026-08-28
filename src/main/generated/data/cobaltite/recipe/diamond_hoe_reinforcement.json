@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:diamond_hoe",
+  "result": {
+    "id": "minecraft:diamond_hoe"
+  },
+  "template": "cobaltite:reinforcement_template"
+}

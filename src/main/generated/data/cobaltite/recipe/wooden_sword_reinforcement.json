@@ -1,0 +1,9 @@
+{
+  "type": "cobaltite:reinforcement_smithing",
+  "addition": "cobaltite:cobalt_ingot",
+  "base": "minecraft:wooden_sword",
+  "result": {
+    "id": "minecraft:wooden_sword"
+  },
+  "template": "cobaltite:reinforcement_template"
+}
