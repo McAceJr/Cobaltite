@@ -2,15 +2,22 @@ package net.mcacejr.cobaltite.item.recipe;
 
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.mcacejr.cobaltite.Cobaltite;
 import net.mcacejr.cobaltite.item.data.CobaltiteDataComponents;
 import net.mcacejr.cobaltite.item.data.custom.ReinforcedComponent;
 import net.minecraft.core.component.DataComponentMap;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.resources.Identifier;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.Weapon;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.item.crafting.display.RecipeDisplay;
 import net.minecraft.world.item.crafting.display.SlotDisplay;
@@ -77,8 +84,9 @@ public class ReinforcementSmithingRecipe extends SimpleSmithingRecipe {
         ItemStack result = TransmuteRecipe.createWithOriginalComponents(this.result, input.base());
         DataComponentMap.Builder builder = DataComponentMap.builder()
                 .set(CobaltiteDataComponents.REINFORCED, new ReinforcedComponent(true));
-        if (result.getMaxDamage() > 0) {
-            builder.set(DataComponents.MAX_DAMAGE, result.getMaxDamage() * 2);
+        int max_damage = result.getMaxDamage();
+        if (max_damage > 0) {
+            builder.set(DataComponents.MAX_DAMAGE, (int)(max_damage * 1.5));
         }
         result.applyComponents(builder.build());
         return result;
