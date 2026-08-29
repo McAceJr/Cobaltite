@@ -2,6 +2,8 @@ package net.mcacejr.cobaltite.item;
 
 import net.mcacejr.cobaltite.Cobaltite;
 import net.mcacejr.cobaltite.block.CobaltiteBlocks;
+import net.mcacejr.cobaltite.item.data.CobaltiteDataComponents;
+import net.mcacejr.cobaltite.item.data.custom.KaleidoscopeLensComponent;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +12,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+
+import java.util.List;
 
 public class CobaltiteCreativeModeTabs {
     public static final ResourceKey<CreativeModeTab> COBALTITE_KEY = createKey("cobaltite.creative_mode_tab");
@@ -44,7 +48,18 @@ public class CobaltiteCreativeModeTabs {
                         output.accept(CobaltiteBlocks.POLISHED_OPAL_BLOCK);
 
                         //Tools & Weapons
-
+                        ItemStack stack1 = new ItemStack(CobaltiteItems.KALEIDOSCOPE);
+                        stack1.set(CobaltiteDataComponents.KALEIDOSCOPE_LENS, new KaleidoscopeLensComponent("minecraft:blur"));
+                        output.accept(stack1);
+                        ItemStack stack2 = new ItemStack(CobaltiteItems.KALEIDOSCOPE);
+                        stack2.set(CobaltiteDataComponents.KALEIDOSCOPE_LENS, new KaleidoscopeLensComponent("minecraft:creeper"));
+                        output.accept(stack2);
+                        ItemStack stack3 = new ItemStack(CobaltiteItems.KALEIDOSCOPE);
+                        stack3.set(CobaltiteDataComponents.KALEIDOSCOPE_LENS, new KaleidoscopeLensComponent("minecraft:invert"));
+                        output.accept(stack3);
+                        ItemStack stack4 = new ItemStack(CobaltiteItems.KALEIDOSCOPE);
+                        stack4.set(CobaltiteDataComponents.KALEIDOSCOPE_LENS, new KaleidoscopeLensComponent("minecraft:spider"));
+                        output.accept(stack4);
 
                         //Enchantment Books
 

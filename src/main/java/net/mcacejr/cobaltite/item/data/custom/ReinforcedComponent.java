@@ -17,7 +17,7 @@ public record ReinforcedComponent(boolean reinforced) implements TooltipProvider
     public static final Codec<ReinforcedComponent> CODEC = RecordCodecBuilder.create(builder ->
             builder.group(
                     Codec.BOOL.optionalFieldOf("reinforced", false).forGetter(ReinforcedComponent::reinforced)
-    ).apply(builder, ReinforcedComponent::new)
+        ).apply(builder, ReinforcedComponent::new)
     );
 
     @Override

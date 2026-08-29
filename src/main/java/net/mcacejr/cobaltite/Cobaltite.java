@@ -26,5 +26,6 @@ public class Cobaltite implements ModInitializer {
 		CobaltiteRecipeSerializers.registerRecipeSerializers();
 
 		ItemComponentTooltipProviderRegistry.addFirst(CobaltiteDataComponents.REINFORCED);
+		ItemComponentTooltipProviderRegistry.addFirst(CobaltiteDataComponents.KALEIDOSCOPE_LENS);
 	}
 }

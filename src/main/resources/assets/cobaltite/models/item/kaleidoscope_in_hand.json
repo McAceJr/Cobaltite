@@ -1,6 +1,7 @@
 {
   "textures": {
-    "spyglass": "cobaltite:item/notch_kaleidoscope_model"
+    "spyglass": "cobaltite:item/kaleidoscope_model",
+    "particle": "#spyglass"
   },
   "elements": [
     {

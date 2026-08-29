@@ -2,6 +2,8 @@ package net.mcacejr.cobaltite.item;
 
 import net.mcacejr.cobaltite.Cobaltite;
 import net.mcacejr.cobaltite.item.custom.*;
+import net.mcacejr.cobaltite.item.data.CobaltiteDataComponents;
+import net.mcacejr.cobaltite.item.data.custom.KaleidoscopeLensComponent;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
@@ -38,6 +40,13 @@ public class CobaltiteItems {
             CobaltiteItemIds.REINFORCEMENT_TEMPLATE,
             ReinforcementTemplateItem::new,
             new Item.Properties()
+    );
+
+    public static final Item KALEIDOSCOPE = registerItem(
+            CobaltiteItemIds.KALEIDOSCOPE,
+            KaleidoscopeItem::new,
+            new Item.Properties().stacksTo(1)
+                    .component(CobaltiteDataComponents.KALEIDOSCOPE_LENS, new KaleidoscopeLensComponent("minecraft:creeper"))
     );
 
     public static Item registerItem(ResourceKey<Item> key, Function<Item.Properties, Item> itemFactory, Item.Properties properties) {

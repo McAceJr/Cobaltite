@@ -4,6 +4,7 @@
   "item.cobaltite.cobalt_nugget": "Cobalt Nugget",
   "item.cobaltite.opal": "Opal",
   "item.cobaltite.reinforcement_template": "Smithing Template",
+  "item.cobaltite.kaleidoscope": "Kaleidoscope",
 
   "block.cobaltite.cobalt_ore": "Cobalt Ore",
   "item.cobaltite.cobalt_ore": "Cobalt Ore",
@@ -29,6 +30,11 @@
   "reinforcement_template.title.tooltip": "Reinforcement Smithing Template",
   "reinforcement_template.base_slot_description.tooltip": "Any Tool",
   "reinforcement_template.additions_slot_description.tooltip": "Cobalt Ingot",
+
+  "lens.kaleidoscope.blur": "Blur",
+  "lens.kaleidoscope.creeper": "Creeper",
+  "lens.kaleidoscope.invert": "Invert",
+  "lens.kaleidoscope.spider": "Spider",
 
   "item.cobaltite.reinforced.info": "Reinforced"
 }
